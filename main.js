@@ -6,9 +6,10 @@ var letsCookButton = document.querySelector('#lets-cook-button')
 var showRandomDish = document.querySelector('.random-dish-name')
 var cookingPotView = document.querySelector('#cooking-pot')
 var recipeSectionView = document.querySelector('#recipe-section')
+var clearRecipeButton = document.querySelector(`#clear-button`)
 
 letsCookButton.addEventListener('click', getRandomDish)
-
+clearRecipeButton.addEventListener('click', clearRecipe)
 
 function getRandomDishValue(dishType) {
   var randomDishValue = Math.floor(Math.random() * dishType.length)
@@ -37,6 +38,14 @@ function getRandomDish() {
     showRandomDish.innerText = `${getRandomDishValue(mains)} with a side of ${getRandomDishValue(sides)} and ${getRandomDishValue(desserts)} for dessert!`
   }
   else {
-    showRandomDish.innerText = `Nothing was selected`
+    alert(`Please select your dish!`)
+    cookingPotView.style.display = "flex"
+    recipeSectionView.style.display = "none"
   }
+}
+
+function clearRecipe() {
+  cookingPotView.style.display = "flex"
+  recipeSectionView.style.display = "none"
+  showRandomDish.innerText = ` `
 }
