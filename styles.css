@@ -133,17 +133,21 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-
+#random-dish {
+  padding: 1em;
+}
 .random-dish-title{
   font-size: 1em;
   text-align: center;
   font-style: italic;
   margin: 0;
+  padding: 0.5em;
 }
 
 .random-dish-name {
-  font-size: 3em;
+  font-size: 2em;
   margin: 0;
   font-weight: 600;
 }
@@ -153,7 +157,7 @@ ul {
   flex-direction: column;
   align-items: flex-end;
   position: relative;
-  top: 8em;
+  top: 6em;
   left: 14em;
 }
 #clear-button {
