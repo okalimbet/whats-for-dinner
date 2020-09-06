@@ -19,6 +19,7 @@ function getRandomDish() {
   var sideDishChecked = document.querySelector('#sideDish').checked
   var mainDishChecked = document.querySelector('#mainDish').checked
   var dessertDishChecked = document.querySelector('#dessert').checked
+  var entireDishChecked = document.querySelector('#entireMeal').checked
 
   cookingPotView.style.display = "none"
   recipeSectionView.style.display = "flex"
@@ -31,6 +32,9 @@ function getRandomDish() {
   }
   else if (dessertDishChecked) {
     showRandomDish.innerText = `${getRandomDishValue(desserts)}!`
+  }
+  else if (entireDishChecked) {
+    showRandomDish.innerText = `${getRandomDishValue(mains)} with a side of ${getRandomDishValue(sides)} and ${getRandomDishValue(desserts)} for dessert!`
   }
   else {
     showRandomDish.innerText = `Nothing was selected`
