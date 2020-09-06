@@ -4,13 +4,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="top-bar">
+    <nav class="top-bar">
       <h3 class="top-bar-text">What's for Dinner?</h3>
       <button class="add-recipe-button">ADD A RECIPE</button>
-    </div>
+    </nav>
     <div class="recipe-generator-window">
       <div id="menu-questionnaire" class="transparent-block-element">
-        <h2 id="menu-title">What are you looking for?<span id="required-symbol">*</span></h2>
+        <h2 id="menu-question">What are you looking for?<span id="required-symbol">*</span></h2>
         <ul class="menu-items-list">
           <label>
             <input type="radio" name="dish" id="sideDish" value="side-dish">Side
@@ -27,9 +27,19 @@
         </ul>
         <button id="lets-cook-button">LET'S COOK!</button>
       </div>
-      <div id="cooking-pot" class="transparent-block-element">
-        <img src="assets/cookpot.svg" alt="Cooking Pot">
-      </div>
+
+      <section id="cooking-pot" class="transparent-block-element">
+          <img src="assets/cookpot.svg" alt="Cooking Pot">
+      </section>
+      <section id="recipe-section" class="transparent-block-element" style="display: none;">
+        <div id="random-dish">
+          <h4 class="random-dish-title">you should make:</h4>
+          <p class="random-dish-name"></p>
+        </div>
+        <div id="clear-button-box">
+          <button id="clear-button">CLEAR</button>
+        </div>
+      </section>
     </div>
   </body>
   <script type="text/javascript" src="main.js"></script>
