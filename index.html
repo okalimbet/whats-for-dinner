@@ -6,9 +6,9 @@
   <body>
     <nav class="top-bar">
       <h3 class="top-bar-text">What's for Dinner?</h3>
-      <button class="add-recipe-button">ADD A RECIPE</button>
+      <button id="add-recipe-button">ADD A RECIPE</button>
     </nav>
-    <div class="recipe-generator-window">
+    <section class="recipe-generator-window">
       <div id="menu-questionnaire" class="transparent-block-element">
         <h2 id="menu-question">What are you looking for?<span id="required-symbol">*</span></h2>
         <ul class="menu-items-list">
@@ -31,7 +31,7 @@
       <section id="cooking-pot" class="transparent-block-element">
           <img src="assets/cookpot.svg" alt="Cooking Pot">
       </section>
-      <section id="recipe-section" class="transparent-block-element" style="display: none;">
+      <section id="recipe-section" class="transparent-block-element" style="display: none">
         <div id="random-dish">
           <h4 class="random-dish-title">you should make:</h4>
           <p class="random-dish-name"></p>
@@ -40,7 +40,14 @@
           <button id="clear-button">CLEAR</button>
         </div>
       </section>
-    </div>
+    </section>
+    <section id="add-recipe-bar" style="display:none">
+      <label for="recipe-type">Recipe Type:</label>
+      <input type="text" id="recipe-type" name="recipe-type">
+      <label for="recipe-name">Recipe Name:</label>
+      <input type="text" id="recipe-name" name="recipe-name">
+      <button id="add-new">ADD NEW</button>
+</section>
   </body>
   <script type="text/javascript" src="main.js"></script>
 </html>
