@@ -1,11 +1,13 @@
 var letsCookButton = document.querySelector('#lets-cook-button')
 var clearRecipeButton = document.querySelector('#clear-button')
 var addRecipeButton = document.querySelector('#add-recipe-button')
-var showRandomDish = document.querySelector('.random-dish-name')
+var addNewButton = document.querySelector('#add-new')
+
 var cookingPotView = document.querySelector('#cooking-pot')
 var recipeSectionView = document.querySelector('#recipe-section')
+var showRandomDish = document.querySelector('.random-dish-name')
+
 var addARecipeBar = document.querySelector('#add-recipe-bar')
-var addNewButton = document.querySelector('#add-new')
 var recipeUserType = document.querySelector('#recipe-type')
 var recipeUserName = document.querySelector('#recipe-name')
 var recipeTypeList = document.querySelector("#recipe-type-select")
@@ -44,24 +46,12 @@ function getRandomDish() {
 
   cookingPotView.style.display = "none"
   recipeSectionView.style.display = "flex"
-  
-  if (sideDishChecked) {
-    showRandomDish.innerText = `${getRandomDishValue(sides)}!`
-  }
-  else if (mainDishChecked) {
-    showRandomDish.innerText = `${getRandomDishValue(mains)}!`
-  }
-  else if (dessertDishChecked) {
-    showRandomDish.innerText = `${getRandomDishValue(desserts)}!`
-  }
-  else if (entireDishChecked) {
-    showRandomDish.innerText = `${getRandomDishValue(mains)} with a side of ${getRandomDishValue(sides)} and ${getRandomDishValue(desserts)} for dessert!`
-  }
-  else {
-    alert(`Please select your dish!`)
-    cookingPotView.style.display = "flex"
-    recipeSectionView.style.display = "none"
-  }
+
+  sideDishChecked ? showRandomDish.innerText = `${getRandomDishValue(sides)}!`
+  : mainDishChecked ? showRandomDish.innerText = `${getRandomDishValue(mains)}!`
+  : dessertDishChecked ? showRandomDish.innerText = `${getRandomDishValue(desserts)}!`
+  : entireDishChecked ? showRandomDish.innerText = `${getRandomDishValue(mains)} with a side of ${getRandomDishValue(sides)} and ${getRandomDishValue(desserts)} for dessert!`
+  : (alert(`Please select your dish!`), cookingPotView.style.display = "flex", recipeSectionView.style.display = "none")
 }
 
 function clearRecipe() {
@@ -83,18 +73,10 @@ function showAddRecipeBar() {
 
 function recordUserNewRecipe() {
   var recipeTypeSelected = recipeTypeList.options[recipeTypeList.selectedIndex].text;
+  recipeUserName.value == "" || recipeTypeSelected === "--Choose your type--" ? alert("Please choose a recipe type and a name")
+  : recipeTypeSelected === "Main Dish" ? mains.push(recipeUserName.value)
+  : recipeTypeSelected === "Side" ? sides.push(recipeUserName.value)
+  : desserts.push(recipeUserName.value)
 
-  if (recipeUserName.value == "" || recipeTypeSelected === "--Choose your type--") {
-    alert("Please choose a recipe type and enter a dish name")
-  }
-  else if (recipeTypeSelected === "Main Dish") {
-    mains.push(recipeUserName.value)
-  }
-  else if (recipeTypeSelected === "Side") {
-    sides.push(recipeUserName.value)
-  }
-  else if (recipeTypeSelected === "Dessert") {
-    desserts.push(recipeUserName.value)
-  }
   recipeUserName.value = ""
 }
