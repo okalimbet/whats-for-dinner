@@ -36,7 +36,7 @@ body {
   margin-left: 1em;
 }
 
-.add-recipe-button {
+#add-recipe-button {
     float: right;
     font-size: 0.9em;
     margin-right: 1em;
@@ -120,7 +120,7 @@ ul {
 
 #required-symbol {
   font-size: 0.7em;
-  color: red;
+  color: #ee5253;
 }
 
 .hidden {
@@ -170,5 +170,33 @@ ul {
   border: 0;
   padding: 0.6em 1em;
   opacity: 1;
+  border-radius: 0.3em;
+}
+
+#add-recipe-bar {
+  background-color: rgba(225, 225, 225, .9);
+  position: absolute;
+  height: 5.5em;
+  margin: 0 0;
+  padding: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin: 0.2em;
+  height: 2.5em;
+}
+
+#add-new {
+  margin-left: 1em;
+  height: 3em;
+  background-color: #0fb9b1;
+  font-size: 0.9em;
+  padding: 0.6em 1em;
+  border: 0;
   border-radius: 0.3em;
 }
